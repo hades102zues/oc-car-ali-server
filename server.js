@@ -50,4 +50,4 @@ app.use((error, req, res, next) => {
 app.use((req, res) => {
 	res.status(404).json({ message: "Unknown Route" });
 });
-app.listen(port, () => console.log("****SERVER INITIATED***", process.env.DATABASE_URL));
+app.listen(port, () => console.log("****SERVER INITIATED***", process.env.POSTGRESQL_DATABASE ));

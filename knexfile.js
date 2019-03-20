@@ -18,7 +18,12 @@ module.exports = {
 	},
 	production: {
 	client: "pg",
-	connection: process.env.DATABASE_URL,
+		connection: {
+			//host: "127.0.0.1",
+			user: process.env.POSTGRESQL_USER,
+			password: process.env.POSTGRESQL_PASS,
+			database: process.env.POSTGRESQL_DATABASE
+		},
 	migrations: {
 		directory: path.join(__dirname, "db", "migrations")
 	},
